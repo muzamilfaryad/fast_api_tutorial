@@ -161,7 +161,7 @@ async def all_items(skip: int = 0, limit: int = 10):
 
 # Using validate_call (function validation)
 
-# from pydantic import validate_call, ValidationError
+# from pydantic import validate_call, ValidationError 
 # from typing import Annotated
 
 # @validate_call
@@ -258,7 +258,7 @@ class Offer(BaseModel):
 async def create_item(
 
     # item → JSON body mapped to Items model
-    item: Items = Body(...),
+    item: Items = Body(...), #Get item from request body and validate it using Items model
 
     # offer → second object in request body
     offer: Offer = Body(...),
