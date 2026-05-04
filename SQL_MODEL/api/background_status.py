@@ -16,7 +16,8 @@ async def place_order(order: OrderCreate, db: AsyncSession = Depends(get_session
     await db.refresh(new_order)
 
     # Start background task to process the order
-    process_order.delay(new_order.id)
+    # Note: For actual background processing, consider using Celery or APScheduler
+    process_order(new_order.id)
 
     return new_order
 

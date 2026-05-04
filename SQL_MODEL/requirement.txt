@@ -1,0 +1,6 @@
+# Dependencies required by the SQL_MODEL app
+python-jose[cryptography]
+
+# Utility for reading .env and config values
+python-decouple
+
